@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    product-service:
+      path: /products/**
+      service-id: product-service
+    order-service:
+      path: /orders/**
+      service-id: order-service
